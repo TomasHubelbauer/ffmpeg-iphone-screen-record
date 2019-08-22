@@ -32,12 +32,16 @@ using (var memoryStream = new MemoryStream())
         var idevicescreenshotProcess = Process.Start(idevicescreenshotProcessStartInfo);
         idevicescreenshotProcess.WaitForExit();
 
+        // TODO: Detect frame.png not having been created (file missing / stdout of idevicescreenshot?)
+
         // Convert PNG to JPG for ffmpeg
         var sipsProcessStartInfo = new ProcessStartInfo();
         sipsProcessStartInfo.FileName = "sips";
         sipsProcessStartInfo.Arguments = "-s format jpeg frame.png --out frame.jpg";
         var sipsProcess = Process.Start(sipsProcessStartInfo);
         sipsProcess.WaitForExit();
+
+        // TODO: Consider sending these to a parallel queue so this doesn't slow down screenshoting
 
         // Send the JPG frame bytes to FFMPEG
         var bytes = await File.ReadAllBytesAsync("frame.jpg");
