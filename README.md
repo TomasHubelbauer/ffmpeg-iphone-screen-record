@@ -13,3 +13,7 @@ Run using `dotnet script main.csx`
 - `dotnet-script` global tool
 - SIPS (PNG to JPG conversion)
 - `libimobiledevice` (for `idevicescreenshot`)
+
+## To-Do
+
+### Use the .NET bindings for ilibmobiledevice to make this work on Windows
