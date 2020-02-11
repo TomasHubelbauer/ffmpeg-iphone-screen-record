@@ -9,6 +9,14 @@ get stiched to an MP4 video playable on an iPhone.
 
 Run using `dotnet script main.csx`
 
+## Why not just use the screen recorder on the iPhone?
+
+You should, I did this because it is IMO a neat hack and that's all.
+Since the frame rate of this solution is so poor, it's not an alternative.
+
+One thing in it's favor though is that it doesn't have the red bar on top
+when recording since it just stitches screenshots together. :-)
+
 ## Dependencies
 
 - .NET Core
